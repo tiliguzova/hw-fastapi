@@ -1,0 +1,30 @@
+version: '3.11'
+
+services:
+  web:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    volumes:
+      - .:/code
+    ports:
+      - '8000:8000'
+#    depends_on:
+#      - db
+    networks:
+      - main
+
+#  db:
+#    image: postgres:12-alpine
+#    ports:
+#      - '5432:5432'
+#    volumes:
+#      - ./data/postgres:/var/lib/postgresql/data/
+#    networks:
+#      - main
+
+networks:
+  main:
+
+#volumes:
+#  db:
